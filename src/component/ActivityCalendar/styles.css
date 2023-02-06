@@ -1,0 +1,73 @@
+.ac-wrapper {
+  display: flex;
+}
+
+.ac-item {
+  width: 11px;
+  height: 11px;
+  background: #dadada;
+  margin: 3px;
+  margin-right: 0;
+  border-radius: 2px;
+  outline: 1px solid rgb(255 255 255 / 6%);
+}
+
+.activity-calender {
+  display: inline-block;
+}
+
+.active {
+  outline: 1px solid var(--color-calendar-graph-day-L1-border);
+}
+
+.activity-1 {
+  background: #0e4429;
+}
+
+.activity-2 {
+  background: #006d32;
+}
+
+.activity-3 {
+  background: #26a641;
+}
+
+.activity-4 {
+  background: #26a641;
+}
+
+.ac-item {
+  position: relative;
+}
+
+.ac-item .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #4b4b4b;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  font-size: 12px;
+  font-family: sans-serif;
+  border-radius: 5px;
+  top: -37px;
+  left: -10px;
+}
+
+.ac-item .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 16px;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #4b4b4b transparent transparent transparent;
+}
+
+.ac-item:hover .tooltiptext {
+  visibility: visible;
+}
