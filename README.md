@@ -68,10 +68,20 @@ const sampleData = [
 ]
 ```
 
+### Month Bar
+
+If you want to render the month bar, use `showMonth` props. By default it is set to `false`
+![Screenshot from 2023-02-07 09-20-17](https://user-images.githubusercontent.com/76901313/217143732-439af3f3-b352-4a44-9e7b-f1bada42c6e0.png)
+
+
+```
+showMonth={true}
+```
+
 ### Pass it in the component
 
 ```
-<ActivityCalendar sampleData={sampleData} colorCustomization={colorCustomization} />
+<ActivityCalendar sampleData={sampleData} colorCustomization={colorCustomization} showMonth={true} />
 ```
 
 # Contribute:
