@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './styles.css'
 
-export function ActivityCalendar({ sampleData, colorCustomization }) {
+export function ActivityCalendar({ sampleData, colorCustomization, showMonth }) {
   const [graphData, setGraphData] = useState([]);
   const tempGraphData = Array(366).fill(0);
   const [currentYear, setCurrentYear] = useState(2023)
   const [dateText, setDayText] = useState([]);
+  const [showMonthBar, setShowMonthBar] = useState(true);
   const getDayOfYear = (date) => {
     var days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     var year = parseInt(date.substring(0, 4));
@@ -42,13 +43,15 @@ export function ActivityCalendar({ sampleData, colorCustomization }) {
     setGraphData(tempGraphData);
   }
   useEffect(() => {
+    setShowMonthBar(showMonth);
+    if (!sampleData) sampleData = [];
     initialiseDateText();
   }, [])
   useEffect(() => {
     initialise();
   }, [])
   const matchColorComb = (colorId) => {
-    if(!colorCustomization) {
+    if (!colorCustomization) {
       if (colorId >= 4) return "#5105fd"
       else if (colorId == 0) return "#dadada"
       else if (colorId == 2) return "#5105fd69"
@@ -63,6 +66,25 @@ export function ActivityCalendar({ sampleData, colorCustomization }) {
   }
   return (
     <div className='activity-calender'>
+      {
+        (showMonthBar) ?
+          <div className="months-wrapper">
+            <span style={{ marginRight: '51px' }}>Jan</span>
+            <span style={{ marginRight: '34px' }}>Feb</span>
+            <span style={{ marginRight: '33px' }}>Mar</span>
+            <span style={{ marginRight: '50px' }}>Apr</span>
+            <span style={{ marginRight: '31px' }}>May</span>
+            <span style={{ marginRight: '34px' }}>Jun</span>
+            <span style={{ marginRight: '53px' }}>Jul</span>
+            <span style={{ marginRight: '32px' }}>Aug</span>
+            <span style={{ marginRight: '32px' }}>Sep</span>
+            <span style={{ marginRight: '50px' }}>Oct</span>
+            <span style={{ marginRight: '33px' }}>Nov</span>
+            <span>Dec</span>
+          </div>
+          :
+          null
+      }
       <div className='ac-wrapper'>
         {
           [...Array(52)].map((e, i) => {

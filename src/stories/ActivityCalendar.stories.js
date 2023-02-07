@@ -1,6 +1,6 @@
 import React from 'react'
-import {storiesOf} from '@storybook/react'
-import {ActivityCalendar} from '../component/ActivityCalendar'
+import { storiesOf } from '@storybook/react'
+import { ActivityCalendar } from '../component/ActivityCalendar'
 
 const stories = storiesOf('Activity Calendar', module)
 
@@ -67,18 +67,10 @@ const sampleData = [
   },
 ]
 
-const colorCustomization = {
-  activity0: 'black',
-  activity1: 'green',
-  activity2: 'yellow',
-  activity3: 'pink',
-  activity4: 'blue',
-}
-
 stories.add('Activity Calendar', () => {
   return (
-    <div style={{padding:'20px'}}>
-      <ActivityCalendar sampleData={sampleData} />
+    <div style={{ padding: '20px' }}>
+      <ActivityCalendar sampleData={sampleData} showMonth={true} />
     </div>
   )
 })
