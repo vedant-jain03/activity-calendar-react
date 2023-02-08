@@ -1,8 +1,9 @@
 {
   "name": "activity-calendar-react",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/index.js",
+  "repository": "https://github.com/vedant-jain03/activity-calendar-react",
   "module": "dist/index.es.js",
   "type": "module",
   "scripts": {
